@@ -12,4 +12,11 @@
 * create `css/style.css` and add content then run `git diff`. Notice that style.css is not in the diff. Only tracked files are in the diff.
 * run `git add -A` and `git diff`. notice that there is still no output.  Run `get diff --staged`  this shows staged changes.
 * add and commit changes
-* run `gitg` (or what you named the alias) 
+* run `gitg` (or what you named the alias). Output should look like this:
+
+```
+247c577 (HEAD -> NewFeature) Readme updates and added css/style.css
+d9a638e (master) updated to Readme
+26988b1 (origin/master) Initial commit of README and index on brnch master
+```
+* run `git checkout master` to change back to the master branch. run `git merge`
