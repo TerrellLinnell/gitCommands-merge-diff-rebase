@@ -3,5 +3,8 @@ function wabadoo() {
 };
 
 function new () {
-  console.log('0');
+}
+
+function sayGoodbye() {
+  console.log('Goodbye');
 };
