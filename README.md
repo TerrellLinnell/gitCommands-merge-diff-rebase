@@ -27,4 +27,36 @@ d9a638e (master) updated to Readme
 * `git checkout master`.  Now the HEAD is now the most recent commit on master.
 
 
-### Step 2:
+### Step 2:### Step 2: Merging with Rebase
+
+* Create a new branch dev from the HEAD (master branch).
+  * It is common to have long running branches for development
+* add a new file `js/main.js` in the dev branch. (Make a commit).
+* Create a branch off dev called new_function.
+* create a new function in main.js in new_function branch. (make a commit).
+* go back to dev and add a function there as well. (make a commit).
+* checkout the new_function branch.
+* `git rebase dev`
+  * If merge conflicts, fix manually then `git add -A` and `git rebase --continue`
+* These commands replay the new_function changes on dev.  The pointer for the dev branch is still behind the latest commit.
+* run `git checkout dev && git merge new_function` to fast-forward the dev pointer.
+
+Output of `gitg` now should look like this:
+
+```
+* 803106c (HEAD -> dev, origin/new_function, origin/dev, new_function) Added a new function in new_function branch
+* 388eb7c new function on dev branch
+* 36d500b added main.js to dev branch
+*   63a4f2d (origin/master, master) fixed the merge conflict
+|\  
+| * e6e89fc changes to index.html in new_feature branch
+* | 45d6a98 readme update
+* | 47d5426 edits to index.html
+|/  
+* 870cc7a updated readme
+* 247c577 Readme updates and added css/style.css
+* d9a638e update to readme
+* 26988b1 Initial commit of README and index on branch master
+```
+
+Notice that the rebase merged the changes from the new_function branch, but the commit history looks linear.
