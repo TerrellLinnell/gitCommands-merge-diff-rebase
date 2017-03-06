@@ -19,4 +19,12 @@
 d9a638e (master) updated to Readme
 26988b1 (origin/master) Initial commit of README and index on brnch master
 ```
-* run `git checkout master` to change back to the master branch. run `git merge`
+* run `git checkout master` to change back to the master branch.  run `git merge new_feature` to bring the changes in from the new_feature branch.
+* `gitg` still shows a linear series of changes.
+* edit the index.html file in the master branch; switch to the new_feature branch; edit the same lines in the new_feature branch.
+* commit these changes to the new_feature branch.
+* `gitg` now shows diverging branches.  Note that the HEAD is the most recent commit on new_feature.
+* `git checkout master`.  Now the HEAD is now the most recent commit on master.
+
+
+### Step 2:
