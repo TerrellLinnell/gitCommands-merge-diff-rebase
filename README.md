@@ -9,6 +9,7 @@
 * `git checkout -b newFeature` is a shortcut equivalent to running both commands
 * run `git branch` to see the branches. The `*` is the active branch.
 * run `git log --all --graph --decorate --oneline`. (make an alias to this command - mine is gitg) this shows all commits in all branches and labels the branches and HEAD.
-* create `css/style.css` and add content then run ``
-*
-*
+* create `css/style.css` and add content then run `git diff`. Notice that style.css is not in the diff. Only tracked files are in the diff.
+* run `git add -A` and `git diff`. notice that there is still no output.  Run `get diff --staged`  this shows staged changes.
+* add and commit changes
+* run `gitg` (or what you named the alias) 
